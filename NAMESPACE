@@ -1,0 +1,3 @@
+exportPattern("^[[:alpha:]]+")
+import(cluster)
+ importFrom("stats", "cutree", "hclust")

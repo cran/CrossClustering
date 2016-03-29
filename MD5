@@ -1,0 +1,10 @@
+9c79492418ff8605ed51dd4ab3937691 *DESCRIPTION
+6425cb9d4d68a2feae71df71a7a42746 *NAMESPACE
+4a0a96f512550068ffb9f6ee3bf57d56 *R/CrossClustering-internal.R
+5f730a77e3b8b711245fefb94906133b *R/CrossClustering.R
+9dd27bef6adca6c6c8cc2ef8c3eb99fb *R/geneinlista.R
+28c09cf699d4030fb25859d6555699d7 *R/proportion.function.R
+98b994f47b0a2ad54dc968947c3b455c *inst/CITATION
+394a277200e0696d0eb20399a497f898 *man/CrossClustering.Rd
+6487adab9b4edc38438c9abb73ff24c7 *man/geneinlista.Rd
+e9abf9e76097753a592ac6c06ba8f1e3 *man/proportion.function.Rd
