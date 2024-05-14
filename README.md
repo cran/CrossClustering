@@ -1,26 +1,28 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-CrossClustering
-===============
 
-[![Travis Build
-Status](https://travis-ci.org/CorradoLanera/CrossClustering.svg?branch=develop)](https://travis-ci.org/CorradoLanera/CrossClustering)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/CorradoLanera/CrossClustering?branch=develop&svg=true)](https://ci.appveyor.com/project/CorradoLanera/CrossClustering)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# CrossClustering
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/CorradoLanera/CrossClustering/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CorradoLanera/CrossClustering/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/CorradoLanera/CrossClustering/branch/master/graph/badge.svg)](https://app.codecov.io/gh/CorradoLanera/CrossClustering?branch=master)
+[![lint](https://github.com/CorradoLanera/CrossClustering/actions/workflows/lint.yaml/badge.svg)](https://github.com/CorradoLanera/CrossClustering/actions/workflows/lint.yaml)
 [![CRAN Status
 Badge](http://www.r-pkg.org/badges/version/CrossClustering)](https://CRAN.R-project.org/package=CrossClustering)
-[![Coverage
-Status](https://codecov.io/gh/CorradoLanera/CrossClustering/branch/develop/graph/badge.svg)](https://codecov.io/gh/CorradoLanera/CrossClustering?branch=develop)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<!-- badges: end -->
 
 CrossClustering is a partial clustering algorithm that combines the
 Ward’s minimum variance and Complete Linkage algorithms, providing
 automatic estimation of a suitable number of clusters and identification
 of outlier elements.
 
-Example
--------
+## Example
 
-This is a basic example which shows you how to the main function, i.e.
+This is a basic example which shows you how to the main function, i.e. 
 `cc_crossclustering()` works:
 
 ``` r
@@ -35,8 +37,9 @@ data(toy)
 d <- dist(t(toy), method = "euclidean")
 
 ### Run CrossClustering
-toyres <- cc_crossclustering(d, k_w_min = 2, k_w_max = 5, k2_max = 6,
-out = TRUE)
+toyres <- cc_crossclustering(
+  d, k_w_min = 2, k_w_max = 5, k2_max = 6, out = TRUE
+)
 toyres
 #> 
 #>     CrossClustering with method complete.
@@ -55,15 +58,15 @@ toyres
 Another useful function worth to mention is `ari`:
 
 ``` r
-clusters <- iris[-5] %>%
- dist() %>%
- hclust(method = 'ward.D') %>%
+clusters <- iris[-5] |>
+ dist() |>
+ hclust(method = 'ward.D') |>
  cutree(k = 3)
 
-ground_truth <- iris[[5]] %>%
+ground_truth <- iris[[5]] |>
   as.numeric()
 
-table(ground_truth, clusters) %>% 
+table(ground_truth, clusters) |> 
   ari()
 #>     Adjusted Rand Index (alpha = 0.05)
 #> 
@@ -75,8 +78,7 @@ table(ground_truth, clusters) %>%
 #>   * Permutation test =   0.001
 ```
 
-Install
--------
+## Install
 
 ### CRAN version
 
@@ -92,15 +94,13 @@ To install the develop branch of CrossClastering package, use:
 devtools::install_github('CorradoLanera/CrossClustering', ref = 'develop')
 ```
 
-Bug reports
------------
+## Bug reports
 
 If you encounter a bug, please file a
 [reprex](https://github.com/tidyverse/reprex) (minimal reproducible
 example) to <https://github.com/CorradoLanera/CrossClustering/issues>
 
-References
-----------
+## References
 
 **Tellaroli P, Bazzi M., Donato M., Brazzale A. R., Draghici S. (2016).
 Cross-Clustering: A Partial Clustering Algorithm with Automatic
